@@ -5,6 +5,8 @@ import { createStore } from 'redux';
 import reducers from './src/reducers';
 import firebase from 'firebase';
 
+import LoginForm from './src/components/LoginForm';
+
 class App extends Component {
 
   componentWillMount() {
@@ -28,6 +30,10 @@ class App extends Component {
             backgroundColor='beige'
             barStyle='dark-content'
           />
+          <View style={{paddingBottom: 150}}>
+            <Text style={styles.introTextStyle}>Sign in to access your console</Text>
+            <LoginForm />
+          </View>
         </View>
       </Provider>
     );
@@ -38,6 +44,13 @@ const styles = {
   backgroundStyle: {
     backgroundColor: 'beige',
     flex: 1,
+    paddingBottom: 24,
+    justifyContent: 'center',
+  },
+  introTextStyle: {
+    fontSize: 30,
+    alignSelf: 'center',
+    padding: 24
   }
 }
 
